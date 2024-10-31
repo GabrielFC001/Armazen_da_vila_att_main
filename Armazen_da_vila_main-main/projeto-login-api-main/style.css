@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.main__login {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("assets/tela\ do\ mercado.webp");
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.left__login {
+  width: 40vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.left__login>h1 {
+  color: hsl(24, 100%, 50%);
+  height: 5vw;
+  font-weight: 500;
+  margin-bottom: 10px;
+  width: 10vw;
+  border-radius: 5px;
+}
+
+.left__login__img {
+  width: vw;
+}
+
+.right__login {
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card__login {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px 50px;
+  background: #ff7300;
+  color: #f0ffff;
+  border-radius: 50px;
+  box-shadow: 0px 3px 40px #ffffff4b;
+}
+
+.card__login>h1 {
+  color: #ffffff;
+  font-weight: 800;
+  margin: 0;
+}
+
+.textfield {
+  width: 80%;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 5px 0px;
+}
+
+.textfield>input {
+  width: 100%;
+  border: none;
+  border-radius: 17px;
+  padding: 15px;
+  background: transparent;
+  color: #ffffff;
+  font-size: 13px;
+  box-shadow: 0px 10px 40px #00000056;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.textfield>label {
+  color: rgb(255, 255, 255);
+  margin-bottom: 10px;
+}
+
+.textfield>input::placeholder {
+  color: rgb(255, 255, 255);
+}
+
+.btn__login {
+  width: 80%;
+  padding: 16px 0px;
+  margin: 25px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #000000;
+  background: #ffffff;
+  cursor: pointer;
+  box-shadow: 0px 10px 40px -20px #ffffff;
+}
+
+.textfield i {
+  font-size: 20px;
+}
+
+.link {
+  color: #f7f7f7de;
+}
+
+

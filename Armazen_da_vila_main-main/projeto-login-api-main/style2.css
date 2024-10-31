@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+
+.direita__login {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.cartao__login {
+    width: 21%;
+    height: 63%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 50px;
+    background: #ff7300;
+    color: #f0ffff;
+    border-radius: 20px;
+    box-shadow: 0px 3px 40px #21c7614b;
+}
+  
+.cartao__login>h1 {
+    color: #ffffff;
+    font-weight: 800;
+    margin: 0;
+}
+  
+.global {
+    width: 100%;
+    display: flex;
+  
+    flex-direction: column;
+}
+  
+.global>input {
+    width: 100%;
+    border: none;
+    border-radius: 17px;
+    padding: 20px;
+    background: transparent;
+    color: #ffffff;
+    font-size: 13px;
+    box-shadow: 0px 10px 40px #00000056;
+    outline: none;
+    box-sizing: border-box;
+}
+  
+.global>label {
+    color: rgb(255, 255, 255);
+    margin-bottom: 10px;
+}
+  
+.global>input::placeholder {
+    color: rgb(255, 255, 255);
+}
+  
+.btn_enviar {
+     width: 40%;
+    padding: 16px 0px;
+    margin: -2px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #000000;
+    background: #ffffff;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -20px #ffffff;
+}
+  
+.global i {
+    font-size: 100px;
+}
+  
+.link {
+    color: #0b7de7de;
+}
+  
+#main_cadastro {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("assets/Armazen_da_vila_with_yellow_border_4k.png");
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    background-color: #ff7300;
+}
+
+  

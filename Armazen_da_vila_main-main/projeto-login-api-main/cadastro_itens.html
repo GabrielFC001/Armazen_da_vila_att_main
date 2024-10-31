@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de itens</title>
+<script>
+
+    function enviar(){
+
+        const info = {
+
+        "nome": document.getElementById('nome').value,
+        "preco": document.getElementById('preco').value,
+        "codigo": document.getElementById('codigo').value,
+        "marca": document.getElementById('marca').value,
+        "categoria": document.getElementById('categoria').value,
+        "peso": document.getElementById('peso').value,
+        "quantidade": document.getElementById('quantidade').value
+        }
+
+        const config = {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(info)
+        }
+        
+        fetch("/cadastro_itens", config)
+        .then(response => response.json())
+        .then(response => {
+            alert(resposta);
+        })
+    }
+
+</script>
+
+</head>
+<body>
+   
+<div class="produto">
+    
+    <div class="informacao">
+       <label for="nome">Nome</label>
+       <input type="text" name="nome" id="nome" placeholder="Nome do produto">
+    </div>
+
+
+    <div class="informacao"> 
+       <label for="preco">Preço</label>
+       <input type="text" name="preco" id="preco" placeholder="Preço do produto">
+    </div>
+
+    <div class="informacao">  
+       <label for="codigo">Codigo</label>
+       <input type="text" name="codigo" id="codigo" placeholder="Codigo do produto">
+    </div>
+
+    <div class="informacao">
+       <label for="marca">Marca</label>
+       <input type="text" name="marca" id="marca" placeholder="Marca do produto">
+    </div>
+
+
+    <div class="informacao">
+       <label for="numero">Numero</label>
+       <input type="text" name="numero" id="numero" placeholder="Numero de telefone">
+    </div>
+
+
+    <div class="informacao">
+       <label for="categoria">Categoria</label>
+       <input type="text" name="categoria" id="categoria" placeholder="Categoria do produto">
+    </div>
+
+
+    <div class="informacao">
+       <label for="peso">Peso</label>
+       <input type="text" name="peso" id="peso" placeholder="Peso do produto">
+    </div> 
+
+
+    <div class="informacao">
+       <label for="quantidade">Quantidade</label>
+       <input type="text" name="quantidade" id="quantidade" placeholder="Quantidade do produto">
+    </div>
+        <br>
+        <button onclick="enviar()" class="btnp_enviar">Enviar</button>
+</div>
+
+<div id="resultado"></div>
+
+</body>
+</html>

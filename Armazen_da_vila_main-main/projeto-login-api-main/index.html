@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <title>Armazen da</title>
+
+  <script>
+
+    function enviar()
+    {
+      var obj = {
+        usuario: document.getElementById("usuario").value,
+        senha: document.getElementById("senha").value,
+      };
+
+      fetch("https://0c3e9d76-6b4b-4ab2-ace3-4a509e12ddb2-00-1agw6aibxwfup.spock.replit.dev/enviar", {
+        method: "POST",
+        headers: {'Content-Type' : 'application/json'},
+        body: JSON.stringify(obj),
+      });
+    }
+
+  </script>
+  
+
+</head>
+
+<body>
+  <div class="main__login"> <!-- div que engloba todas as dives -->
+    <div class="left__login"> <!-- div da esquerda -->
+      <h1 id="resposta"><br>Supermercado Armazen da Vila</h1>
+      <img src="assets/mercado slogan.png" class="left__login__img" alt="transformation">
+    </div>
+    <div class="right__login"> <!-- div da direita -->
+      <div class="card__login"> <!-- card que fica em volta do usuario e senha -->
+        <h1>Login</h1>
+        <div class="textfield"> <!-- div para engloba tanto a label quanto o input -->
+          <label for="usuario">Usuario</label>
+          <input type="text" name="usuario" id="usuario" placeholder="Digite o usuario">
+          <i class='bx bxs-user-pin'></i>
+        </div>
+        <div class="textfield"> <!-- div para engloba tanto a label quanto o input -->
+          <label for="senha">Senha</label>
+          <input type="password" name="usuario" id="senha" placeholder="Digite a senha">
+          <i class='bx bxs-lock-alt'></i>
+          <div class="remenber-forguet">
+            <label><input type="checkbox">Lembre me</label>
+            <a class="link" href="#">Esqueceu a senha?</a>
+          </div>
+        </div>
+        <button onclick="enviar()" class="btn__login">Login</button>
+        <div class="Registrese__link">
+          <p>Não tem uma conta? <a class="link" href="cadastro.html">Registre-se</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

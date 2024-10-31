@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style2.css">
+  <title>Document</title>
+
+
+  <script>
+
+    function enviar(){
+
+        const info = {
+
+        "usuario": document.getElementById('usuario').value,
+        "email": document.getElementById('email').value,
+        "senha": document.getElementById('senha').value,
+        "cpf": document.getElementById('cpf').value,
+        "numero": document.getElementById('numero').value,
+        "cep": document.getElementById('cep').value,
+        }
+
+        const config = {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(info)
+        }
+        
+        fetch("/cadastro_itens", config)
+        .then(response => response.json())
+        .then(response => {
+            alert(resposta);
+        })
+    }
+
+</script>
+
+</head>
+
+<body id="main_cadastro">
+  <div class="direita__login"> <!-- div da direita -->
+    <div class="cartao__login"> <!-- card que fica em volta do usuario e senha -->
+
+      <h1>Cadastro</h1>
+
+      <div class="global"> <!-- div para engloba tanto a label quanto o input -->
+        <label for="usuario">Usuario</label>
+         <input type="text" name="usuario" id="usuario" placeholder="Digite o usuario">
+          <i class='bx bxs-user-pin'></i> 
+      </div>
+
+      <div class="global"> <!-- div para engloba tanto a label quanto o input -->
+        <label for="email">Email</label>
+         <input type="text" name="email" id="email" placeholder="Digite o email">
+         <i class="ri-mail-line"></i>
+      </div>
+
+      <div class="global"> <!-- div para engloba tanto a label quanto o input -->
+        <label for="senha">Senha</label>
+         <input type="password" name="senha" id="senha" placeholder="Digite a senha">
+          <i class='bx bxs-user-pin'></i>
+      </div>
+
+      <div class="global"> <!-- div para engloba tanto a label quanto o input -->
+        <label for="cpf">CPF</label>
+         <input type="text" name="cpf" id="cpf" placeholder="Digite o cpf">
+          <i class='bx bxs-user-pin'></i>
+      </div>
+
+      <div class="global"> <!-- div para engloba tanto a label quanto o input -->
+        <label for="numero">Numero</label>
+         <input type="text" name="numero" id="numero" placeholder="Numero de telefone">
+          <i class='bx bxs-user-pin'></i>
+      </div>
+
+      
+      <div class="global"> <!-- div para engloba tanto a label quanto o input -->
+        <label for="cep">CEP</label>
+         <input type="text" name="cep" id="cep" placeholder="Digite o seu cep">
+          <i class='bx bxs-user-pin'></i>
+      </div>
+
+
+        <br>
+        <button onclick="enviar()" class="btn_enviar">Enviar</button>
+
+
+           </div>
+         </div>
+       </div>
+     </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
