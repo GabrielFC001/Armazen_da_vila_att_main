@@ -48,7 +48,29 @@ app.post("/cadastrar_usuario", (req, res) => {
         if(err) res.send(err);
         else res.send("Cadastro feito com Sucesso!");
     })
-} )
+});
+
+
+
+app.post("/addproduto", function (req, res){
+
+    console.log(req.body);
+
+    var nome = req.body.nome;
+    var preco = req.body.preco;
+    var codigo = req.body.codigo;
+    var marca = req.body.marca;
+    var quantidade = req.body.quantidade;
+    var categoria = req.body.categoria;
+    var peso = req.body.peso;
+
+    var sql = "INSERT INTO PRODUTOS ( NOME, PRECO, CODIGO, MARCA, QUANTIDADE, CATEGORIA, PESO ) VALUES ( ?, ?, ?, ?, ?, ?, ? )";
+
+    db.run(sql, [nome, preco, codigo, marca, quantidade, categoria, peso], (err) => {
+        if(err) res.send(err);
+        else res.send("Dados Inseridos");
+    });
+});
  
 
 
