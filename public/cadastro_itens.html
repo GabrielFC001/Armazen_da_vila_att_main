@@ -25,9 +25,9 @@
             body: JSON.stringify(info)
         }
         
-        fetch("/cadastro_itens", config)
-        .then(response => response.json())
-        .then(response => {
+        fetch("/addproduto", config)
+        .then(response => response.text())
+        .then(resposta => {
             alert(resposta);
         })
     }
@@ -59,12 +59,6 @@
     <div class="informacao">
        <label for="marca">Marca</label>
        <input type="text" name="marca" id="marca" placeholder="Marca do produto">
-    </div>
-
-
-    <div class="informacao">
-       <label for="numero">Numero</label>
-       <input type="text" name="numero" id="numero" placeholder="Numero de telefone">
     </div>
 
 

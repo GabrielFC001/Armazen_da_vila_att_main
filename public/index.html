@@ -13,17 +13,34 @@
 
     function enviar()
     {
+
       var obj = {
         usuario: document.getElementById("usuario").value,
-        senha: document.getElementById("senha").value,
+        senha: document.getElementById("senha").value
       };
 
-      fetch("https://0c3e9d76-6b4b-4ab2-ace3-4a509e12ddb2-00-1agw6aibxwfup.spock.replit.dev/enviar", {
+
+      var configuracao = {
+        
         method: "POST",
         headers: {'Content-Type' : 'application/json'},
-        body: JSON.stringify(obj),
-      });
-    }
+        body: JSON.stringify(obj)
+      };
+
+
+      fetch("/validar_login", configuracao)
+      .then(response => response.text())
+      .then(joesley => {
+        alert(joesley);
+      })
+
+
+
+
+
+      }
+
+
 
   </script>
   
