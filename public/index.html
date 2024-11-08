@@ -7,12 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <title>Armazen da</title>
+  <title>Armazen da Vila</title>
 
   <script>
 
-    function enviar()
-    {
+     function enviar() {
 
       var obj = {
         usuario: document.getElementById("usuario").value,
@@ -21,29 +20,29 @@
 
 
       var configuracao = {
-        
+
         method: "POST",
-        headers: {'Content-Type' : 'application/json'},
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(obj)
       };
 
 
       fetch("/validar_login", configuracao)
-      .then(response => response.text())
-      .then(joesley => {
-        alert(joesley);
-      })
+        .then(response => response.text())
+        .then(joesley => {
+          window.location.href = joesley;
+        })
 
 
 
 
 
-      }
+    }
 
 
 
   </script>
-  
+
 
 </head>
 
@@ -53,6 +52,7 @@
       <h1 id="resposta"><br>Supermercado Armazen da Vila</h1>
       <img src="assets/mercado slogan.png" class="left__login__img" alt="transformation">
     </div>
+
     <div class="right__login"> <!-- div da direita -->
       <div class="card__login"> <!-- card que fica em volta do usuario e senha -->
         <h1>Login</h1>
@@ -61,6 +61,7 @@
           <input type="text" name="usuario" id="usuario" placeholder="Digite o usuario">
           <i class='bx bxs-user-pin'></i>
         </div>
+
         <div class="textfield"> <!-- div para engloba tanto a label quanto o input -->
           <label for="senha">Senha</label>
           <input type="password" name="usuario" id="senha" placeholder="Digite a senha">
@@ -70,9 +71,11 @@
             <a class="link" href="#">Esqueceu a senha?</a>
           </div>
         </div>
-        <button onclick="enviar()" class="btn__login">Login</button>
+
+        <button href="inicio.html" onclick="enviar()" class="btn__login">Login</button>
         <div class="Registrese__link">
           <p>Não tem uma conta? <a class="link" href="cadastro.html">Registre-se</a></p>
+
         </div>
       </div>
     </div>
