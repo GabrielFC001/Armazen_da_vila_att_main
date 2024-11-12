@@ -4,44 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style3.css">
     <title>Inicio</title>
+
+    <script>
+
+        function sair() {
+
+            window.location.href = "index.html";
+
+        }
+
+    </script>
 
 
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
-
-        #titulo {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: "Poppins", "sans-serif";
-            background-color: rgb(253, 158, 70);
-            width: 1900px;
-            margin-bottom: 30px;
-        }
-
-        a{
-            display: flex;
-            color: black;
-            font-size: 20px;
-            margin-top: 20px;
-        }
     </style>
 
 </head>
 
 <body>
 
-    <div id="titulo">
+    <div class="titulo">
+        <img src="assets/logo.png" width="250px" height="100%">
+        <h1>Armazem da Vila</h1>
+    </div>
+
+    <div id="faixa">
         <h1>Seja Bem vindo!</h1>
     </div>
 
-    <hr heigth="600px">
+    <h2>Área de pesquisa:</h2>
 
-    
-    <a href="cadastro_itens.html">Fazer cadastro de produto!</a>
+    <div id="templates">
 
-    <hr size="100px">
+        <a href="cadastro_itens.html">Fazer cadastro de produto!</a>
+
+        <a href="cadastro.html">Cadastrar usuario!</a>
+        
+    </div>
+
+    <div id="sair">
+        <button onclick="sair()">SAIR</button>
+    </div>
 
 </body>
 

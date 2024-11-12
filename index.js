@@ -4,7 +4,7 @@ const path = require("path");
 
 const db = new sqlite3.Database("Desenvolvimento.sqlite");
 
-const app = express(); 
+const app = express();
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")))
@@ -14,17 +14,36 @@ app.use(express.static(path.join(__dirname, "public")))
 //_______________________________________________________________________________
 
 
+
 //Fornece a pagina de login
-app.get("/", (req,res) =>{
+app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname + "/index.html"))
 })
 
 
-app.post("/validar_login", (req,res) =>{
+app.post("/validar_login", (req, res) => {
+
+    console.log(req.body);
+
+    var usuario = req.body.usuario;
+    var senha = req.body.senha;
+
+    var check = false;
+
+    db.all("SELECT * FROM CADASTROS", (err, rows) => {
+
+        for (var i = 0; i < rows.length; i++) {
+
+            console.log(rows[i].NOME + "   " + rows[i].SENHA)
+            if (usuario == rows[i].NOME && senha == rows[i].SENHA) check = true;
+
+        }
 
 
-console.log(req.body);
-res.send("recebido!")
+        if (check == true) res.send("/inicio.html");
+        else res.send("/");
+
+    })
 
 
 })
@@ -73,12 +92,12 @@ app.post("/cadastrar_usuario", (req, res) => {
     var cpf = req.body.cpf;
     var numero = req.body.numero;
     var cep = req.body.cep;
-    
+
 
     var sql = 'INSERT INTO CADASTROS (NOME, EMAIL, SENHA, CPF, NUMERO, CEP) VALUES ( ?, ?, ?, ?, ?, ? );';
 
     db.run(sql, [nome, email, senha, cpf, numero, cep], (err) => {
-        if(err) res.send(err);
+        if (err) res.send(err);
         else res.send("Cadastro feito com Sucesso!");
     })
 });
@@ -91,12 +110,12 @@ app.post("/cadastrar_usuario", (req, res) => {
 
 
 //Fornece a pagina de cadastro de itens
-app.get("/cadastrar_itens", (req,res) =>{
+app.get("/cadastrar_itens", (req, res) => {
     res.sendFile(path.join(__dirname + "/public/cadastro_itens.html"))
 })
 
 
-app.post("/addproduto", function (req, res){
+app.post("/addproduto", function (req, res) {
 
     console.log(req.body);
 
@@ -111,15 +130,13 @@ app.post("/addproduto", function (req, res){
     var sql = "INSERT INTO PRODUTOS ( NOME, PRECO, CODIGO, MARCA, QUANTIDADE, CATEGORTIA, PESO ) VALUES ( ?, ?, ?, ?, ?, ?, ? )";
 
     db.run(sql, [nome, preco, codigo, marca, quantidade, categoria, peso], (err) => {
-        if(err) res.send(err);
+        if (err) res.send(err);
         else res.send("Dados Inseridos");
     });
 });
- 
+
 
 //--------------------------------------------------------------
-
-
 
 app.listen(3000, console.log("rodando..."));
 
